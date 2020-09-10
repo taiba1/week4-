@@ -1,5 +1,5 @@
 const getInfo = () => {
-  const response = fetch('https://gtl-covid-api.herokuapp.com/api')
+  const response = fetch('https://gtl-covid-api.herokuapp.com/api/')
   .then(response => response.json())
     
   .then( data => {
@@ -7,10 +7,6 @@ const getInfo = () => {
     let totalDeaths = 0
     data['Covid 19 Cases'].forEach((last,index) =>{
       totalConfirm += Number(last.Confirmed)
-      if (index +1===data['Covid 19 Cases'].length) {
-      console.log(totalDeaths)
-      document.getElementById('second').innerHTML = totalConfirm 
-      }
 
        document.querySelector('#tablecase').insertAdjacentHTML("afterbegin", 
             
@@ -24,9 +20,9 @@ const getInfo = () => {
            )
     });
 
-           data['Covid 19 Cases'].forEach((item,index)=>{
-             console.log(item.Deaths)
-    })
+    //        data['Covid 19 Cases'].forEach((item,index)=>{
+    //          console.log(item.Deaths)
+    // })
 
      
 
